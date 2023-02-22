@@ -1,4 +1,5 @@
 :root {
+  font-size: 16px;
   --clr-primary-100: #ffffff;
   --clr-primary-200: #9aa7be;
   --clr-secondary-100: hsl(71, 73%, 54%);
@@ -29,24 +30,29 @@ li {
 }
 
 /* Custom styles */
-.container {
-  display: grid;
+body {
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
   max-width: 40em;
-  height: 100vh;
   padding: 1.5em;
 }
 
 .card-container {
+  display: grid;
   border-radius: 0.25em 0.25em 0 0;
-  box-shadow: 0 0 0.625em 0.3em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.625em 0.1em rgba(0, 0, 0, 0.1);
 }
+
 .card-header,
 .subscription-content,
 .benefits-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 2em;
   gap: 1.5em;
 }
@@ -77,7 +83,7 @@ li {
 .subscription-content button {
   background-color: var(--clr-secondary-100);
   border: none;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   color: var(--clr-primary-100);
   box-shadow: 0 0 0.625em 0.3em rgba(0, 0, 0, 0.1);
   font-weight: 700;
@@ -114,4 +120,48 @@ li {
   line-height: 1.25rem;
   margin-bottom: 0.15em;
   opacity: 0.8;
+}
+
+@media screen and (min-width: 48em) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0.5em;
+    overflow: hidden;
+  }
+
+  .card-header,
+  .subscription-content,
+  .benefits-content {
+    padding: 2em;
+  }
+
+  .card-header {
+    grid-column: span 2;
+  }
+
+  .card-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.125rem;
+  }
+
+  .card-header p {
+    font-size: 1rem;
+  }
+
+  .subscription-content {
+    grid-area: 2/1;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .subscription-content button {
+    justify-self: flex-end;
+  }
+
+  .benefits-content {
+    grid-area: 2/2;
+  }
 }
