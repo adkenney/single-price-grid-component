@@ -1,3 +1,10 @@
+:root {
+  --clr-primary-100: #ffffff;
+  --clr-primary-200: #9aa7be;
+  --clr-secondary-100: hsl(71, 73%, 54%);
+  --clr-secondary-200: #2ab3b1;
+}
+
 /* Small css reset */
 *,
 *::before,
@@ -13,4 +20,98 @@
 html,
 body {
   min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+/* Custom styles */
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 40em;
+  height: 100vh;
+  padding: 1.5em;
+}
+
+.card-container {
+  border-radius: 0.25em 0.25em 0 0;
+  box-shadow: 0 0 0.625em 0.3em rgba(0, 0, 0, 0.1);
+}
+.card-header,
+.subscription-content,
+.benefits-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  gap: 1.5em;
+}
+
+.card-header h1 {
+  color: var(--clr-secondary-200);
+  font-size: 1.25rem;
+}
+
+.card-header h2 {
+  color: var(--clr-secondary-100);
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+}
+
+.card-header p {
+  color: var(--clr-primary-200);
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+}
+
+.subscription-content,
+.benefits-content {
+  background-color: var(--clr-secondary-200);
+  color: var(--clr-primary-100);
+}
+
+.subscription-content button {
+  background-color: var(--clr-secondary-100);
+  border: none;
+  border-radius: 0.25em;
+  color: var(--clr-primary-100);
+  box-shadow: 0 0 0.625em 0.3em rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  padding: 1em;
+  cursor: pointer;
+}
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.monthly-pricing {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.pricing span {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.benefits-content {
+  opacity: 0.8;
+}
+
+.benefits-content h4 {
+  font-size: 1.125rem;
+}
+
+.benefits-content li {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.15em;
+  opacity: 0.8;
 }
